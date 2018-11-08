@@ -1,9 +1,12 @@
 # DataWranglingToyDataSet
 
-In this exercise, you'll work with a toy data set showing product purchases from an electronics store.
+In this exercise, I have worked with a toy data set showing product purchases from an electronics store.
 There are four brands: Philips, Akzo, Van Houten and Unilever. However, there are many different spellings and capitalizations of those names!
 
 The product code and number are combined in one column, separated by a hyphen. 
+
+The following has been done on the Data set:
+
 1: Clean up brand names
 
 Clean up the 'company' column so all of the misspellings of the brand names are standardized. For example, you can transform the values in the column to be: philips, akzo, van houten and unilever (all lowercase).
@@ -18,16 +21,15 @@ You learn that the product codes actually represent the following product catego
 
 p = Smartphone
 v = TV
-
 x = Laptop
-
 q = Tablet
 
 In order to make the data more readable, add a column with the product category for each record.
 
 4: Add full address for geocoding
 
-You'd like to view the customer information on a map. In order to do that, the addresses need to be in a form that can be easily geocoded. Create a new column full_address that concatenates the three address fields (address, city, country), separated by commas.
+In order to view the customer information on a map. In order to do that, the addresses need to be in a form that can be easily geocoded. Create a new column full_address that concatenates the three address fields (address, city, country), separated by commas.
+
 5: Create dummy variables for company and product category
 
 Both the company name and product category are categorical variables i.e. they take only a fixed set of values. In order to use them in further analysis you need to create dummy variables. Create dummy binary variables for each of them with the prefix company_ and product_ i.e.,
