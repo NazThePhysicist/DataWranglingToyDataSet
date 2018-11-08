@@ -1,0 +1,39 @@
+library(dplyr)
+data.class(refine)
+View(refine)
+
+refine <- refine %>% mutate(company = ifelse(grepl("^phil|^fil|^phl", company, ignore.case = TRUE), "philips", company)) %>% mutate(company = ifelse(grepl("^AK", company, ignore.case = TRUE), "akzo", company)) %>% mutate(company = ifelse(grepl("^van", company, ignore.case = TRUE), "van houten", company)) %>% mutate(company = ifelse(grepl("^uni", company, ignore.case = TRUE), "unilever", company))
+
+View(refine)
+library(tidyr)
+install.packages("tidyr")
+View(refine)
+
+install.packages("tidyr")
+
+refine <- refine %>% separate("Product code / number" , into = c("product_code", "product_number"))
+
+refine %>% separate("Product code / number" , into = c("product_code", "product_number"))
+
+ifelse(refine$product_code == "p", "Smartphone", ifelse(refine$product_code == "x" , "Laptop", ifelse(refine$product_code == "v", "TV", ifelse(refine$product_code == "q", "Tablet","other"))))
+
+refine$product_category <- ifelse(refine$product_code == "p", "Smartphone", ifelse(refine$product_code == "x" , "Laptop", ifelse(refine$product_code == "v", "TV", ifelse(refine$product_code == "q", "Tablet","other"))))
+
+refine %>% unite(full_address, c(address, city, country), sep = ",")
+
+refine %>% unite(refine$full_address, c(address, city, country), sep = ",")
+
+refine %>% unite(full_address, c(address, city, country), sep = ",")
+refine <- refine %>% unite(full_address, c(address, city, country), sep = ",")
+ View(refine)
+refine$company_philips <-  ifelse(refine$company == " philips", 1,0) 
+ refine$company_akzo <-  ifelse(refine$company == " akzo ", 1,0) 
+ refine$company_van_houten  <-  ifelse(refine$company == " van_houten ", 1,0) 
+ refine$company_unilever <-  ifelse(refine$company == " unilever ", 1,0) 
+
+refine$product_smartphone <-  ifelse(refine$product_code == "p", 1,0) 
+ refine$product_tv <-  ifelse(refine$product_code == "v", 1,0) 
+ refine$product_laptop <-  ifelse(refine$product_code == "x", 1,0)  refine$product_tablet <-  ifelse(refine$product_code == "q", 1,0) 
+
+
+
